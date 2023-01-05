@@ -1,6 +1,7 @@
 package numbercheck;
 
 import java.util.Scanner;
+
 public class Menu
 {
     public void Menu()
@@ -10,7 +11,8 @@ public class Menu
 
         System.out.println("---------Menu---------");
         System.out.println("1. Check Odd or Even");
-        System.out.println("2. Exit");
+        System.out.println("2. Check Prime");
+        System.out.println("3. Exit");
         System.out.print("\nChoose the option: ");
                 
         option = sc.nextInt();
@@ -21,7 +23,9 @@ public class Menu
         {
             case 1: CheckOddOrEven();
                     break;
-            case 2: Exit();
+            case 2: CheckPrimeNumber();
+                    break;
+            case 3: Exit();
                     break;
             default: System.out.println("Incorrect menu option");
                      Menu();
@@ -36,14 +40,19 @@ public class Menu
 	OddOrEven obj = new OddOrEven();
         obj.CheckOddOrEven();
     }
+    public void CheckPrimeNumber() 
+    {
+        CheckPrime obj = new CheckPrime();
+        obj.CheckPrime();
+    }
 
-     public void Exit() 
+    public void Exit() 
     {
         System.exit(0);
     } 
-public static void main(String[] args)
+    public static void main(String[] args)
     {
       Menu obj = new Menu();
         obj.Menu();
-    }
-    }
+}
+   }
